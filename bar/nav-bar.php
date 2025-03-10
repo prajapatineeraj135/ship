@@ -1,6 +1,6 @@
 <nav>
       <button id="toggle-button">☰</button> <!-- Add a button for the toggle -->
-        <a href="#"><img src="images/shipet/logo.png" alt="Logo Shipet.in" class="logo"></a>
+        <a href="http://localhost:3000/ship/"><img src="images/shipet/logo.png" alt="Logo Shipet.in" class="logo"></a>
         <div class="link" id="link">
             <a href="#"><img src="images/nav-bar/whatsapp256.png" alt="whatsapp"></a>
             <span><a href="#"><h4>Whatsapp</h4></a><a href="#"><h6>10AM-7PM Mon-Sat</h6></a></span>

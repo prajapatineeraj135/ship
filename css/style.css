@@ -70,13 +70,14 @@ nav .link {
 aside {
     top: 4em;
     padding: 0.5rem;
-    position: sticky;
-    width: 10vw;
+    position: static;
+    width: 12vw;
     height: calc(100vh - 2em - 4em);
     min-width: 10rem;
     grid-area: sidebar;
     background-color: hsl(200, 100%, 75%);
     border-right: 4px solid black;
+    border-bottom: 4px solid black;
 }
 
 #sidebar.show {
@@ -149,13 +150,10 @@ aside {
 /* Footer */
 footer {
     bottom: 0;
-    position: sticky;
     height: 3em;
     grid-area: footer;
-    text-align: center;
+    text-align: left;
     align-content: center;
-    border-top: 2px solid black;
-    background-color: rgb(250, 250, 150);
     font-size: small;
 }
 
@@ -225,8 +223,6 @@ main {
         font-size: 0.7rem;
     }
 }
-
-
 
 .section {
     margin-top: 50px;

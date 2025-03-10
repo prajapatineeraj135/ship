@@ -2,12 +2,14 @@
   <div class="track">
     <img src="images/gif/track.gif" alt="" class="truck">
     <h3>Track Shipment </h3>
-    <form action="#" method="POST">
-      <input type="text" name="tracking_number" id="tracking_number" placeholder="Enter Shipment/Contact" required>
+    <form action="" method="POST">
+      <input type="text" name="tracking_number" id="tracking_number" pattern="[0-9]+" placeholder="Enter Shipment/Contact" required>
       <button type="submit" name="track">Track Now</button>
     </form>
   </div>
 </div>
+
+
 
 <style>
   .track {

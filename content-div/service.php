@@ -22,16 +22,20 @@
     <div class="service" id="service2">
 
         <span><img src="images/service/pincode.png" alt="">
-            <h5>29000+ Pincodes</h5>
+            <h5>29000+</h5>
+            <h5>Pincodes</h5>
         </span>
         <span><img src="images/service/bestrate.png" alt="">
-            <h5>Best Shipping Rates</h5>
+            <h5>Best Shipping</h5>
+            <h5>From Others</h5>
         </span>
         <span><img src="images/service/easyuse.png" alt="">
-            <h5>Convenient And Easy </h5>
+            <h5>Our WebApp</h5>
+            <h5>Easy To Use</h5>
         </span>
         <span><img src="images/service/service.png" alt="">
-            <h5>Value added Service</h5>
+            <h5>At Price</h5>
+            <h5>Value Service</h5>
         </span>
         <span><img src="images/service/safety.png" alt="">
             <h5>Safety And Insurance</h5>
