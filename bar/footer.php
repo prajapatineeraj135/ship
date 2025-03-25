@@ -50,7 +50,7 @@
     }
 
     .col h3 {
-        self-align: left;
+        align-self : left;
         margin-bottom: 10px;
     }
 
