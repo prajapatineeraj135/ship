@@ -1,11 +1,12 @@
+
 <aside id="sidebar">
     <h2>Shipment</h2>
     <ul>
-        <li><a href="#">Track Shipment</a></li>
-        <li><a href="#">Book Shipment</a></li>
-        <li><a href="#">My Shipments</a></li>
+        <li><a href="http://localhost:3000/ship/tracking.php">Track Shipment</a></li>
+        <li><a href="http://localhost:3000/ship/book_form.php">Book Shipment</a></li>
+        <li><a href="http://localhost:3000/ship/my_shipment.php">My Shipments</a></li>
         <li><a href="#">Service Check</a></li>
-        <li><a href="#">Rate Calculator</a></li>
+        <li><a href="http://localhost:3000/ship/estimate.php">Rate Calculator</a></li>
         <li><a href="#">Pickup Address</a></li>
     </ul>
 

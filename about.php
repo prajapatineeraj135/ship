@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +11,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <title>About</title>
 </head>
+
 <body>
   <!-- import nav-bar and side-bar from images/bar folder -->
   <?php
@@ -28,9 +30,9 @@
       </div>
       <div class="content" id="refer">
         <h3>Refer & Earn</h3>
-        <p>Please use this form to refer your friends or business partners who are looking for shipping services. Successful referrals will result in reward of <strong>Rs.1000</strong> as per the T&C referrals.
+        <p>Please use this form to refer your friends or business partners who are looking for shipping services. Successful referrals will result in reward of <strong>Rs. 1000</strong> as per the T&C referrals.
         <ol>
-          <li><strong>1.</strong> For every successful referral you will get <strong>Rs.1000</strong> credit into your shipet Wallet.</li>
+          <li><strong>1.</strong> For every successful referral you will get <strong>Rs. 1000</strong> credit into your shipet Wallet.</li>
           <li><strong>2.</strong> Referral is considered successful if your referral does at least 10 shipments using our service within one month of onboarding.</li>
           <li><strong>3.</strong> Referral amount will be credited within 30 days of successful referral confirmation.</li>
           <li><strong>4.</strong> Referral amount credit can be used for shipping only. This is a promotional credit and is not refundable. It will not expire as long as account is active.</li>
@@ -48,7 +50,7 @@
         </h4>
         We collect information from you when you register on our site or when you fill out a form.
         When ordering or registering on our site, as appropriate, you may be asked to enter your name, address, e-mail, address or phone number. You may also visit our site anonymously.
-        <h4> What do we use your information for?</h4>
+        <h4>What do we use your information for?</h4>
         Any of the information we collect from you may be used in the following ways:
         To personalize your experience (your information helps us to better respond to your individual needs)
         To improve our website (we continually strive to improve our website offerings based on the information and feedback we receive from you)
@@ -174,7 +176,7 @@
         </li>
         <li>5. For any claims by the Client like wrong freight being applied, Cash on Delivery missing, pilferage, in transit damage- the signed copy of the manifest sheet of the pickup against which the courier company has received the shipment has to be submitted along with the claim request. Without the signed manifest the request shall not be considered valid.</li>
         <h4> Shipet™ Wallet</h4>
-        The shipetTM Wallet ("Wallet") is a closed loop prepaid payment instrument associated with your account on the Company Site.
+        The shipet™ Wallet ("Wallet") is a closed loop prepaid payment instrument associated with your account on the Company Site.
         The amount in your wallet will be used to pay for services or fees of Company Site.
         Services could include and are not limited to subscription fees for chosen plans, shipment charges, value added service fees etc.
         No interest will be paid on any balance maintained in the Wallet.
@@ -207,13 +209,16 @@
         COD remittance amount will be settled against any pending dues to the company.
         COD remittance will be split between bank and wallet in case there is a projected negative balance or balance is expected to fall below the minimum reserve balance for account.
         <h4>Prohibited Articles</h4>
-        ​1. Anything which is sent in contravention of any enactment for the time b​eing in force.
-        2. Any indecent or obscene printing, painting, photograph, lithograph, engraving, book or card, or any other indecent or obscene articles.
-        3. Any letter, postcard, newspaper, packet or parcel having on it or on the cover thereof, any words, marks or design of an indecent, obscene, seditious, scurrilous threatening, or grossly offensive nature.
-        4. Any explosive, inflammable, dangerous, filthy, noxious or deleterious substance.
-        5. Any Living creatures or other thing which is either noxious or likely to injure postal article in course of transmission by post or any officer.
-        6. Tickets proposal or advertisement or any other matter relating to a lottery except to the lottery organized or authorized by Government.
-        7. Gold coins or bullion or both of a value exceeding Rs. 20,000/-.
+        <ol>
+          <li>​1. Anything which is sent in contravention of any enactment for the time b​eing in force.</li>
+          <li>2. Any indecent or obscene printing, painting, photograph, lithograph, engraving, book or card, or any other indecent or obscene articles. </li>
+          <li>3. Any letter, postcard, newspaper, packet or parcel having on it or on the cover thereof, any words, marks or design of an indecent, obscene, seditious, scurrilous threatening, or grossly offensive nature. </li>
+          <li>4. Any explosive, inflammable, dangerous, filthy, noxious or deleterious substance. </li>
+          <li>5. Any Living creatures or other thing which is either noxious or likely to injure postal article in course of transmission by post or any officer. </li>
+          <li>6. Tickets proposal or advertisement or any other matter relating to a lottery except to the lottery organized or authorized by Government. </li>
+          <li>7. Gold coins or bullion or both of a value exceeding Rs. 20,000/-. </li>
+        </ol>
+
         <h4>Dangerous Goods</h4>
         <li>o Oil-based paint and thinners (flammable liquids)</li>
         <li>o Industrial solvents</li>
@@ -279,33 +284,42 @@
     }
   </script>
 </body>
+
 </html>
+
+
 <style>
   .about h2 {
     text-align: center;
     margin: 20px 0 20px 0;
   }
+
   .content {
     padding: 10px;
     margin: 10px 0 10px 0;
   }
+
   .content h3 {
     margin-left: -10px;
-    background-color: rgb(250, 250, 150);
+    background-color: hsl(200, 100%, 75%);
     margin-bottom: 10px;
     padding: 5px 10px 5px 10px;
     border-radius: 0.5em;
     border-bottom: 2px solid black;
   }
+
   .content h4 {
     margin: 20px 0 10px 0;
   }
+
   .content p {
     text-align: justify;
   }
+
   .content ol {
     text-align: justify;
   }
+
   .content li {
     margin: 10px 0;
     list-style-type: none;

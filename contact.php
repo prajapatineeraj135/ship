@@ -25,31 +25,32 @@
         <!-- Contact Options Section -->
         <section class="contact-options">
             <div class="contact-item">
-                <i class="icon-call"><img src="images/foot-icon/call.png" alt="Call icon"></i>
+                <i class="icon"><img src="images/foot-icon/call.png" alt="Call icon"></i>
                 <p>Call</p>
             </div>
             <div class="contact-item">
-                <i class="icon-find"><img src="images/foot-icon/location.png" alt="Location icon"></i>
+                <i class="icon"><img src="images/foot-icon/location.png" alt="Location icon"></i>
                 <p>Find</p>
             </div>
             <div class="contact-item">
-                <i class="icon-chat"><img src="images/foot-icon/whatsapp.png" alt="Whatsapp icon"></i>
+                <i class="icon"><img src="images/foot-icon/whatsapp.png" alt="Whatsapp icon"></i>
                 <p>Chat</p>
             </div>
             <div class="contact-item">
-                <i class="icon-follow"><img src="images/foot-icon/instagram.png" alt="Instagram icon"></i>
+                <i class="icon"><img src="images/foot-icon/instagram.png" alt="Instagram icon"></i>
                 <p>Follow</p>
             </div>
             <div class="contact-item">
-                <i class="icon-like"><img src="images/foot-icon/facebook.png" alt="Facebook icon"></i>
+                <i class="icon"><img src="images/foot-icon/facebook.png" alt="Facebook icon"></i>
                 <p>Like</p>
             </div>
             <div class="contact-item">
-                <i class="icon-join"><img src="images/foot-icon/telegram.png" alt="Telegram icon"></i>
+                <i class="icon"><img src="images/foot-icon/telegram.png" alt="Telegram icon"></i>
                 <p>Join</p>
             </div>
         </section>
 
+        <div class="divider"></div>
         <section class="contact">
         
         <form action="#" method="post" class="contact-form">
@@ -78,6 +79,8 @@
             <button type="submit" name="submit">Submit</button>
         </form>
     </section>
+    
+    <div class="divider"></div>
         <section class="details">
             <div class="col">
             <h2>Details</h2>

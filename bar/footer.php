@@ -1,4 +1,5 @@
 <div class="section">
+    <div class="divider"></div>
     <h2>About</h2>
     <div class="footer-section">
         <div class="col">

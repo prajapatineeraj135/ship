@@ -16,7 +16,7 @@
   <!-- import nav-bar and side-bar from images/bar folder -->
   <?php
   include 'bar/nav-bar.php';
-  // include 'bar/side-bar.php';
+  include 'bar/side-bar.php';
   ?>
 
   <main>
@@ -25,11 +25,12 @@
     <?php include 'content-div/service.php'; ?>
     <?php include 'content-div/company-banner.php'; ?>
   </main>
-  <!-- import here footer file from images/bar/footer.php -->
 
   <footer>
+    <!-- import here footer file from images/bar/footer.php -->
     <?php include 'bar/footer.php'; ?>
-  </footer> 
+  </footer>
+
 </body>
 
 </html>
