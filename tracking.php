@@ -12,12 +12,18 @@
   <title>Shipet-Tracking</title>
 </head>
 <style>
+
+
+
+
+ 
   .track_section {
     padding: 10px;
     margin: 20px;
     min-width: fit-content;
     justify-content: center;
     align-items: center;
+    grid-area: main;
     display: flex;
     flex-direction: column;
     background-color: rgb(141, 194, 255);
@@ -153,7 +159,7 @@
         <img src="images/gif/track.gif" alt="" class="truck">
         <h3>Track Shipment </h3>
         <form action="" method="GET">
-          <input type="text" name="shipment_id" id="shipment_id" pattern="[0-9]+" placeholder="Enter Shipment/Contact" required>
+          <input type="text" name="shipet_id" id="shipet_id" pattern="[0-9]+" placeholder="Enter Shipment" maxlength="6" required>
           <button type="submit" name="track" value="track">Track Now</button>
         </form>
       </div>
@@ -165,14 +171,14 @@
         include("connection/api_token.php"); // Assuming api_token.php contains the variable $apiToken
         if (isset($_GET['track'])) {
           // Check if user input is provided
-          if (empty($_GET['shipment_id'])) {
+          if (empty($_GET['shipet_id'])) {
             echo "Please enter a valid Shipment ID.";
             exit;
           }
           // Get the shipment ID from user input
-          $userShipmentId = $_GET['shipment_id'];
+          $userShipmentId = $_GET['shipet_id'];
           // Prepare the SQL query to get the tracking ID based on the shipment ID
-          $stmt = $conn->prepare("SELECT tracking_id FROM shipments WHERE shipment_id = ?");
+          $stmt = $conn->prepare("SELECT shipment_id FROM booked_shipments WHERE shipet_id = ?");
           if ($stmt) {
             // Bind the parameter (shipment_id)
             $stmt->bind_param("s", $userShipmentId);
@@ -184,7 +190,7 @@
               if ($result->num_rows > 0) {
                 // Fetch the shipment details
                 $row = $result->fetch_assoc();
-                $userTracking = $row['tracking_id'];
+                $userTracking = $row['shipment_id'];
               } else {
                 echo "No shipment found with ID: " . htmlspecialchars($userShipmentId);
                 exit;

@@ -13,13 +13,15 @@
 </head>
 <style>
     .section {
+       
         margin: 10px;
     }
 
     .estimate_section {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+
+        flex-direction: row;
+        justify-content: center;
         width: 500px;
         padding: 20px;
         background-color: hsl(200, 100.00%, 85%);
@@ -190,9 +192,9 @@
     include 'bar/side-bar.php';
     ?>
     <main>
-        <section Class="section">
+        <section Class="section" >
             <div class="estimate_section">
-                <form action="" method="POST" class="estimate_form">
+                <form action="estimate_result.php" method="GET" class="estimate_form">
                     <h1>Shipment Estimate Cost</h1>
                     <div class="estimate_input">
                         <div class="col 1">
@@ -204,15 +206,29 @@
                             <input type="integer" name="height" class="textfield" required>
                             <label for="weight">Weight(Gm):</label>
                             <input type="integer" name="weight" class="textfield" required>
+                            <label for="shipment_value">Shipment Value:</label>
+                            <input type="text" name="shipment_value" class="textfield" pattern="[0-9]+" required>
                         </div>
                         <div class="col 2">
                             <label for="origin_pincode">Sender Pincode:</label>
-                            <input type="text" name="origin_pincode" class="textfield" maxlength="6" pattern="[0-9]+" required>
-                            <label for="destination_pincode">Receiver Pincode:</label>
-                            <input type="text" name="destination_pincode" class="textfield" maxlength="6" pattern="[0-9]+" required>
+                            <input type="text" id="origin_pincode" name="origin_pincode"
+                                oninput="fetchLocation('origin_pincode', 'origin_city')"
+                                placeholder="Enter Pincode" maxlength="6" minlength="6" required>
 
-                            <label for="shipment_value">Shipment Value:</label>
-                            <input type="text" name="shipment_value" class="textfield" pattern="[0-9]+" required>
+
+                            <label for="origin_city">City:</label>
+                            <input type="text" id="origin_city" name="origin_city" readonly>
+
+
+                            <label for="destination_pincode"> Reciver Pincode:</label>
+                            <input type="text" id="destination_pincode" name="destination_pincode"
+                                oninput="fetchLocation('destination_pincode', 'destination_city')"
+                                placeholder="Enter Pincode" maxlength="6" minlength="6" required><label for="destination_city">City:</label>
+                            <input type="text" id="destination_city" name="destination_city" readonly>
+
+
+
+                            
                             <label for="shipment_type">Shipment Type:</label>
                             <div class="input_radio">
                                 <label><input type="radio" name="shipment_type" value="P" <?php if (isset($_POST['shipment_type']) && $_POST['shipment_type'] == 'P') echo 'checked'; ?> required>Prepaid</label>
@@ -222,96 +238,7 @@
                     </div>
                     <div class="estimate_btn"><button type="submit" name="estimate" value="estimate" class="btn">Get Estimate Rate</button></div>
                 </form>
-            </div>
-        </section>
-        <section class="section">
-            <div class="estimate_result">
-                <?php
-                include 'connection/api_token.php';
-                // Check if form is submitted
-                if (isset($_POST['estimate'])) {
-                    // Assign POST variables to local variablesS
-                    $length = $_POST['length'];
-                    $breadth = $_POST['breadth'];
-                    $height = $_POST['height'];
-                    $weight = $_POST['weight'];
-                    $destination_pincode = $_POST['destination_pincode'];
-                    $origin_pincode = $_POST['origin_pincode'];
-                    $shipment_type = $_POST['shipment_type'];
-                    $shipment_value = $_POST['shipment_value'];
-                    $volweight = ($length * $breadth * $height * 1000) / 5000;
-                    // API URL with token
-                    $apiUrl = 'https://www.icarry.in/api_get_estimate&api_token=' . $api_token;
-                    // Payload data
-                    $data = [
-                        'length' => $length,
-                        'breadth' => $breadth,
-                        'height' => $height,
-                        'weight' => $weight,
-                        'destination_pincode' => $destination_pincode,
-                        'origin_pincode' => $origin_pincode,
-                        'destination_country_code' => 'IN',
-                        'origin_country_code' => 'IN',
-                        'shipment_mode' => 'S',
-                        'shipment_type' => $shipment_type,
-                        'shipment_value' => $shipment_value,
-                    ];
-                    // Initialize cURL session
-                    $ch = curl_init($apiUrl);
-                    // Set cURL options
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                    curl_setopt($ch, CURLOPT_POST, true);
-                    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-                    // Execute cURL session
-                    $response = curl_exec($ch);
-                    // Close cURL session
-                    curl_close($ch);
-                    // Decode the JSON response
-                    $result = json_decode($response, true);
-                }
-                // Check if $result is set and not empty
-                if (isset($result)) {
-                    // Display tracking information
-                    echo '<div class="result">';
-                    echo '<h3> Shipment Estimate Cost</h3>';
-                    echo '<h5>From ' . $origin_pincode . ' To ' . $destination_pincode . '</h5>';
-                    echo '<h5>Weight: ' . $weight . 'Gm</h5>';
-                    echo '<h5>Volumetric Weight: ' . $volweight . 'Gm</h5>';
-                    echo '<h5>L-B-H: ' . $length . 'x' . $breadth . 'x' . $height . 'Cm</h5>';
-                    echo '<table border="1">';
-                    echo '<tr>';
-                    echo '<th>Company Name</th>';
-                    echo '<th>Cetegory</th>';
-                    echo '<th>Charges</th>';
-                    // Add more table headers as needed
-                    echo '</tr>';
-                    // Check if 'estimates' key exists and it's not empty
-                    if (isset($result['success']) && !empty($result['success'])) {
 
-                        foreach ($result['estimate'] as $estimate) {
-                            // Check if the courier_cost is numeric, if not, set it to 0
-                            if (is_numeric($estimate['courier_cost'])) {
-                                // Cast the courier_cost to float and add 20% to it
-                                $courier_cost_value = (float)$estimate['courier_cost'] + ($estimate['courier_cost'] * 0.20);
-                            } else {
-                                // If it's not numeric, assign a default value of 0
-                                $courier_cost_value = 0;
-                            }
-                        
-                            // Display the results
-                            echo '<tr>';
-                            echo '<td>' . htmlspecialchars($estimate['courier_group_name']) . '</td>';
-                            echo '<td>' . htmlspecialchars($estimate['courier_name']) . '</td>';
-                            echo '<td>' . number_format($courier_cost_value, 2) . '</td>'; // Format with 2 decimal places
-                            echo '</tr>';
-                        }
-                        echo '</table>';
-                        echo '</div>';
-                    }
-                } else {
-                    //echo '<p class="error">Enter Estimaste Input Details Details</p>';
-                }
-                ?>
             </div>
         </section>
     </main>
@@ -322,3 +249,4 @@
 </body>
 
 </html>
+

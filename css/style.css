@@ -8,14 +8,16 @@
     box-sizing: border-box;
     letter-spacing: .05em;
 }
+
+
 a {
     text-decoration: none;
     color: black;
 }
 /* Body Layout using Grid */
 body {
-    min-width: 100vw;
-    min-height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
     display: grid;
     grid-template-areas:
         "nav nav"
@@ -66,7 +68,7 @@ aside {
     padding: 0.5rem;
     position: static;
     width: 12vw;
-    height: calc(100vh - 2em - 4em);
+    height: calc(100vh - 2em);
     min-width: 10rem;
     grid-area: sidebar;
     background-color: hsl(200, 100%, 75%);
@@ -135,7 +137,7 @@ aside {
 footer {
     bottom: 0;
     height: 3em;
-    width:100vw ;
+    width:100% ;
     grid-area: footer;
     text-align: left;
     align-content: center;
@@ -214,7 +216,7 @@ main {
     background-color: #000;
 }
 section {
-    width: 100vw;
+    width: 100%;
 }
 .section {
     width: 100%;

@@ -144,7 +144,7 @@
                     echo '</div>';
                 } else {
                     // If the courier_status is not 30, output a message
-                    echo "This courier is already booked. Status: " . $status_name;
+                    echo "This courier is Booked Now Current Status: " . $status_name;
                 }
             } else {
                 // If no result found, print an error message

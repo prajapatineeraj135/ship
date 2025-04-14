@@ -1,6 +1,4 @@
-<div class="section">
-    <div class="divider"></div>
-    <h2>About</h2>
+
     <div class="footer-section">
         <div class="col">
             <h3>Account</h3>
@@ -39,7 +37,6 @@
             </ul>
         </div>
     </div>
-</div>
 
 <style>
     .footer-section {
@@ -48,6 +45,9 @@
         /* 4 equal columns */
         gap: 10px;
         padding: 10px 10px 10px 30px;
+        border-top: solid 2px black;
+        background-color: white;
+        
     }
 
     .col h3 {

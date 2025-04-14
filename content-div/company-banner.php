@@ -1,7 +1,7 @@
 <div class="section">
   <h2>Couriers Company</h2>
   <div class="banner-section" id="banner-section">
-    <div class="banner-image" id="banner-image">
+    <div class="banner-image">
       <img src="images/company-banner/delhivery.jpg" alt="delhivery shipping">
       <img src="images/company-banner/xpressbees.jpg" alt="xpressbees shipping">
       <img src="images/company-banner/ekart.jpg" alt="ekart shipping">
@@ -11,7 +11,7 @@
       <img src="images/company-banner/shadowfex.jpg" alt="shadowfex shipping">
       <img src="images/company-banner/bluedart.jpg" alt="bluedart shipping">
       <img src="images/company-banner/ecomexpress.jpg" alt="ecomexpress shipping">
-    </div>
+  </div>
   </div>
 </div>
 </div>
